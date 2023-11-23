@@ -74,9 +74,8 @@ class _EventState extends State<Event> {
                 StandardInputField(name: 'Contact name', keyboardType: TextInputType.text, maxLines: 1, controller: contactNameController),
                 // CONTACT NUMBER
                 StandardInputField(name: 'Contact number', keyboardType: TextInputType.phone, maxLines: 1, controller: contactNumberController),
-                // UPLOAD DOCS/IMAGES - PLACEHOLDER
-                StandardInputField(name: 'upload', keyboardType: TextInputType.text, maxLines: 1, controller: uploadController),
-                
+                // UPLOAD DOCS/IMAGES
+                //TODO integrate upload file/image into db & class
                 ElevatedButton(
                   child: const Text('Attach File or Photo to Event'),
                   onPressed: () async {
@@ -87,7 +86,8 @@ class _EventState extends State<Event> {
                     final newFile = await saveFilePermanently(file);
                   },
                 ),
-
+                // EVENT TAGS
+                //TODO integrate tags into db & create class(?)
                 ElevatedButton(
                   onPressed: () async {
                     Tag? newTag = await showAddTagDialog(context);
