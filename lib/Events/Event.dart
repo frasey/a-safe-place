@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:a_safe_place/Events/StandardInputField.dart';
-import 'package:a_safe_place/Database/mongodb.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
