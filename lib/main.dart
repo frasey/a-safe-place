@@ -6,7 +6,10 @@ import 'package:a_safe_place/Events/Event.dart';
 import 'package:a_safe_place/Features/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'Authentication/signup_page.dart';
 import 'Homepage/HomePage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   // Future<void>
@@ -22,9 +25,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'A Safe Place',
       home: SplashScreen(
-        child: LoginPage(),
+        child: SignUpPage(),
       ),
       // home: HomePage(),
     );
