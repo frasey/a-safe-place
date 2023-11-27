@@ -5,23 +5,25 @@ import '../Events/Event.dart';
 import 'package:a_safe_place/NavBar.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // APPBAR
-        appBar: NavBar(),
-
-        // HOMEPAGE BODY
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+         body: Column(
+            children: [
+            // APPBAR
+            const NavBar(),
+              // HOMEPAGE BODY
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
             // NEXT EVENT PREVIEW
-            const Placeholder(
-              fallbackHeight: 80,
-              fallbackWidth: 150,
-            ),
+                  const Placeholder(
+                  fallbackHeight: 80,
+                  fallbackWidth: 150,
+                  ),
             // When functionality for the above section has been added, include below code for route animation:
             // onPressed: () => Navigator.of(context).push(PageTransition(
             //                 type: PageTransitionType.scale,
@@ -36,7 +38,7 @@ class HomePage extends StatelessWidget {
                 duration: const Duration(milliseconds: 800),
                 reverseDuration: const Duration(milliseconds: 800),
                 child: const Event(),
-              )),
+              ),),
             ),
             // SEE ALL EVENTS
             ElevatedButton(
@@ -47,14 +49,18 @@ class HomePage extends StatelessWidget {
                 duration: const Duration(milliseconds: 800),
                 reverseDuration: const Duration(milliseconds: 800),
                 child: const HomePage(),
-              )),
+              ),),
             ),
             // NOTES
             const Placeholder(
               fallbackHeight: 80,
               fallbackWidth: 150,
-            ),
-          ],
-        ));
+              ),
+                ],
+              ),
+            )
+            ],
+         ),
+    );
   }
 }
